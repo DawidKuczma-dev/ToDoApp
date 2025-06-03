@@ -1,4 +1,5 @@
 @use 'variables' as *;
+@use 'lightmode-toggle';
 
 html {
    font-family: $ff-primary;
@@ -9,6 +10,10 @@ body {
    background-repeat: no-repeat;
    background-color: theme-get('page-bg');
    background-size: 100% 200px;
+   &.lightmode {
+      background-image: url('../assets/images/bg-mobile-light.jpg');
+      background-color: theme-get('page-bg', 'light');
+   }
 }
 
 .todo-app {
@@ -27,5 +32,26 @@ body {
       color: white;
       letter-spacing: 12px;
       margin-bottom: 35px;
+   }
+   // Theme toggle
+   &__theme-toggle {
+      @extend .lightmode-toggle;
+      &:checked + label {
+         background-color: theme-get('page-bg', 'light');
+      }
+      &:checked + label::after {
+         background: linear-gradient(180deg, #72a6fa, #a66fee);
+      }
+   }
+   &__theme-label {
+      @extend .lightmode-label;
+      top: 0px;
+      right: 0px;
+      transform: scale(0.14);
+      transform-origin: top right;
+      background-color: theme-get('page-bg');
+      &::after {
+         background: linear-gradient(180deg, theme-get('placeholder-clr'), theme-get('task-bg'));
+      }
    }
 }

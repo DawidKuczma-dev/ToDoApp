@@ -9,3 +9,27 @@ $ff-primary: 'Josefin Sans', sans-serif;
 
 $font-weight-regular: 400;
 $font-weight-bold: 700;
+
+$themes: (
+   dark: (
+      page-bg: hsl(235, 21%, 11%),
+      task-bg: hsl(235, 24%, 19%),
+      task-clr: hsl(234, 39%, 85%),
+      task-clr-hover: hsl(236, 33%, 92%),
+      completed-task: hsl(233, 14%, 35%),
+      placeholder-clr: hsl(234, 11%, 52%),
+      border-clr: hsl(237, 14%, 26%),
+   ),
+   light: (
+      page-bg: hsl(236, 33%, 92%),
+      task-bg: hsl(0, 0%, 98%),
+      task-clr: hsl(235, 19%, 35%),
+      completed-task: hsl(236, 9%, 61%),
+      placeholder-clr: hsl(236, 9%, 61%),
+      border-clr: hsl(233, 11%, 84%),
+   ),
+);
+
+@function theme-get($key, $theme: 'dark') {
+   @return map-get(map-get($themes, $theme), $key);
+}
