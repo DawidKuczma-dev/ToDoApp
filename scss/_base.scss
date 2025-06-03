@@ -1,0 +1,31 @@
+@use 'variables' as *;
+
+html {
+   font-family: $ff-primary;
+   font-size: $font-size;
+}
+body {
+   background-image: url('../assets/images/bg-mobile-dark.jpg');
+   background-repeat: no-repeat;
+   background-color: theme-get('page-bg');
+   background-size: 100% 200px;
+}
+
+.todo-app {
+   width: 100%;
+   min-width: $min-width;
+   max-width: $max-width;
+   margin: 0px auto;
+   padding: 45px 25px;
+}
+
+.header {
+   position: relative;
+   &__title {
+      font-size: 1.6rem;
+      text-transform: uppercase;
+      color: white;
+      letter-spacing: 12px;
+      margin-bottom: 35px;
+   }
+}

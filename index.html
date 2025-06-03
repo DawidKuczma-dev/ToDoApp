@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>To Do App</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100..700&display=swap" rel="stylesheet" />
+      <link rel="stylesheet" href="css/main.css" />
+   </head>
+   <body>
+      <main class="todo-app">
+         <header class="header">
+            <h1 class="header__title">Todo</h1>
+         </header>
+
+         <form class="task-form">
+            <input type="text" class="task-form__input" placeholder="Add new task..." />
+            <button type="submit" class="task-form__add-btn"><i class="fa-solid fa-plus"></i></button>
+         </form>
+         <div class="container-list">
+            <ul class="task-list">
+               <li class="task-item">
+                  <button class="task-item__check-btn completed">
+                     <img src="assets/images/icon-check.svg" alt="check-button" />
+                  </button>
+                  <span class="task-item__text completed"></span>
+                  <button class="task-item__delete-btn">
+                     <img src="assets/images/icon-cross.svg" alt="delete-button" />
+                  </button>
+               </li>
+               <li class="task-item">
+                  <button class="task-item__check-btn">
+                     <img src="assets/images/icon-check.svg" alt="check-button" />
+                  </button>
+                  <span class="task-item__text"><span></span></span>
+                  <button class="task-item__delete-btn">
+                     <img src="assets/images/icon-cross.svg" alt="delete-button" />
+                  </button>
+               </li>
+            </ul>
+            <footer class="container-list__footer">
+               <span class="container-list__counter">0 items left</span>
+               <button class="container-list__clear-btn">Clear Completed</button>
+            </footer>
+         </div>
+
+         <footer class="task-footer">
+            <div class="task-footer__filters">
+               <button class="task-footer__filter-btn active">All</button>
+               <button class="task-footer__filter-btn">Active</button>
+               <button class="task-footer__filter-btn">Completed</button>
+            </div>
+            <span class="task-footer__info">Drag and drop to reorder list</span>
+         </footer>
+      </main>
+
+      <script src="js/script.js"></script>
+   </body>
+</html>
