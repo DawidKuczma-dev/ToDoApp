@@ -36,3 +36,10 @@ $filter-clr: hsl(220, 98%, 61%);
 @function theme-get($key, $theme: 'dark') {
    @return map-get(map-get($themes, $theme), $key);
 }
+
+$breakpoints: (
+   mobileS: 360px,
+   mobileL: 425px,
+   tablet: 768px,
+   desktop-large: 1440px,
+);

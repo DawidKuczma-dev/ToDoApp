@@ -29,6 +29,19 @@
       font-size: 0.75rem;
       text-align: center;
    }
+
+   @include mq(mobileS, true) {
+      &__filters {
+         padding: 17px 17px;
+      }
+   }
+   @include mq(tablet) {
+      margin-top: 20px;
+      &__filters {
+         margin-bottom: 50px;
+         font-size: 1rem;
+      }
+   }
 }
 
 .lightmode {

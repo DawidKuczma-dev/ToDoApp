@@ -1,4 +1,5 @@
 @use 'variables' as *;
+@use 'mixins' as *;
 @use 'lightmode-toggle';
 
 html {
@@ -14,6 +15,21 @@ body {
       background-image: url('../assets/images/bg-mobile-light.jpg');
       background-color: theme-get('page-bg', 'light');
    }
+
+   // Media query
+   @include mq(mobileL) {
+      background-image: url('../assets/images/bg-desktop-dark.jpg');
+      background-size: auto 200px;
+      &.lightmode {
+         background-image: url('../assets/images/bg-desktop-light.jpg');
+      }
+   }
+   @include mq(tablet) {
+      background-size: auto;
+   }
+   @include mq(desktop-large) {
+      background-size: 100% 300px;
+   }
 }
 
 .todo-app {
@@ -22,6 +38,11 @@ body {
    max-width: $max-width;
    margin: 0px auto;
    padding: 45px 25px;
+
+   // Media query
+   @include mq(tablet) {
+      padding: 80px 25px;
+   }
 }
 
 .header {
@@ -52,6 +73,20 @@ body {
       background-color: theme-get('page-bg');
       &::after {
          background: linear-gradient(180deg, theme-get('placeholder-clr'), theme-get('task-bg'));
+      }
+   }
+
+   // Media query
+   @include mq(tablet) {
+      &__title {
+         font-size: 2rem;
+         letter-spacing: 15px;
+         margin-bottom: 45px;
+      }
+
+      // Theme toggle
+      &__theme-label {
+         transform: scale(0.175);
       }
    }
 }

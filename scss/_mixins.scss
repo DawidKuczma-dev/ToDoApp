@@ -1,0 +1,12 @@
+@use 'variables' as *;
+
+@mixin mq($breakpoint, $max: false) {
+   $size: map-get($breakpoints, $breakpoint);
+   @if ($size) {
+      @media (#{if($max, 'max-width', 'min-width')}: #{$size}) {
+         @content;
+      }
+   } @else {
+      @error '"#{$breakpoint}" - is not defined in #{$breakpoints}.';
+   }
+}

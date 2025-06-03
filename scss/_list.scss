@@ -19,6 +19,16 @@
       cursor: pointer;
       color: theme-get('task-clr-hover');
    }
+
+   //Media query
+   @include mq(tablet) {
+      margin-top: 25px;
+      border-radius: 7px;
+      &__footer {
+         padding: 18px 20px;
+         font-size: 1rem;
+      }
+   }
 }
 
 .lightmode {
@@ -77,6 +87,23 @@
       width: 20px;
       padding: 2px;
       cursor: pointer;
+   }
+
+   //Media query
+   @include mq(tablet) {
+      padding: 20px 25px;
+      &__check-btn {
+         padding: 6px;
+         width: 24px;
+         height: 24px;
+      }
+      &__text {
+         margin: 0 24px;
+         font-size: 0.9rem;
+      }
+      &__delete-btn {
+         padding: 0;
+      }
    }
 }
 
