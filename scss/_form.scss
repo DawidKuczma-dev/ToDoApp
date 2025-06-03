@@ -1,0 +1,51 @@
+@use 'variables' as *;
+
+.task-form {
+   display: flex;
+   align-items: center;
+   height: 50px;
+   background-color: theme-get('task-bg');
+   padding: 15px 20px;
+   border-radius: 5px;
+
+   &__input {
+      font-size: 0.8rem;
+      flex-grow: 1;
+      color: theme-get('task-clr');
+      font-family: inherit;
+      letter-spacing: 0.3px;
+      &::-webkit-input-placeholder {
+         color: theme-get('placeholder-clr');
+      }
+   }
+   &__add-btn {
+      color: theme-get('page-bg', 'light');
+      margin-left: 20px;
+      cursor: pointer;
+      & i {
+         font-size: 1.4rem;
+         font-weight: 400;
+      }
+      &:hover {
+         color: white;
+      }
+   }
+}
+
+.lightmode {
+   .task-form {
+      background-color: theme-get('task-bg', 'light');
+      &__input {
+         color: theme-get('task-clr', 'light');
+         &::-webkit-input-placeholder {
+            color: theme-get('placeholder-clr', 'light');
+         }
+      }
+      &__add-btn {
+         color: theme-get('completed-task');
+         &:hover {
+            color: theme-get('page-bg');
+         }
+      }
+   }
+}

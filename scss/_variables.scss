@@ -30,6 +30,9 @@ $themes: (
    ),
 );
 
+$check-bg: linear-gradient(135deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+$filter-clr: hsl(220, 98%, 61%);
+
 @function theme-get($key, $theme: 'dark') {
    @return map-get(map-get($themes, $theme), $key);
 }

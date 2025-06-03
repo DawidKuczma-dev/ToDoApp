@@ -1,0 +1,105 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.container-list {
+   margin-top: 15px;
+   background-color: theme-get('task-bg');
+   border-radius: 5px;
+   .task-list {
+      padding-left: 0;
+   }
+   &__footer {
+      padding: 18px 20px;
+      color: theme-get('completed-task');
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+   }
+   &__clear-btn:hover {
+      cursor: pointer;
+      color: theme-get('task-clr-hover');
+   }
+}
+
+.lightmode {
+   .container-list {
+      background-color: theme-get('task-bg', 'light');
+      &__footer {
+         color: theme-get('completed-task', 'light');
+      }
+      &__clear-btn:hover {
+         color: theme-get('page-bg');
+      }
+   }
+}
+
+.task-item {
+   display: flex;
+   align-items: center;
+   padding: 15px 20px;
+   border-bottom: 1px solid theme-get('border-clr');
+   &__check-btn {
+      padding: 4px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 1px solid theme-get('border-clr');
+      cursor: pointer;
+      &:hover {
+         border-color: $filter-clr;
+      }
+      img {
+         display: none;
+      }
+      &.completed {
+         background: $check-bg;
+         border: none;
+         img {
+            display: block;
+         }
+      }
+   }
+   &__text {
+      flex-grow: 1;
+      margin: 0 10px;
+      color: theme-get('task-clr');
+      font-size: 0.8rem;
+      & span:hover {
+         cursor: pointer;
+         color: theme-get('task-clr-hover');
+      }
+      &.completed {
+         color: theme-get('completed-task');
+         text-decoration: line-through;
+      }
+   }
+   &__delete-btn {
+      width: 20px;
+      padding: 2px;
+      cursor: pointer;
+   }
+}
+
+.lightmode {
+   .task-item {
+      border-bottom: 1px solid theme-get('border-clr', 'light');
+      &__check-btn {
+         border: 1px solid theme-get('border-clr', 'light');
+         &:hover {
+            border-color: $filter-clr;
+         }
+         &.completed {
+            border: none;
+         }
+      }
+      &__text {
+         color: theme-get('task-clr', 'light');
+         & span:hover {
+            color: theme-get('page-bg');
+         }
+         &.completed {
+            color: theme-get('completed-task', 'light');
+         }
+      }
+   }
+}

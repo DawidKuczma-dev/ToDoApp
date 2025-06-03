@@ -1,0 +1,49 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.task-footer {
+   margin-top: 15px;
+   &__filters {
+      display: flex;
+      justify-content: space-between;
+      padding: 17px 75px;
+      border-radius: 5px;
+      margin-bottom: 40px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      background-color: theme-get('task-bg');
+      color: theme-get('completed-task');
+   }
+   &__filter-btn {
+      &.active {
+         color: $filter-clr;
+      }
+      &:not(.active):hover {
+         cursor: pointer;
+         color: theme-get('task-clr-hover');
+      }
+   }
+   &__info {
+      display: block;
+      color: theme-get('completed-task');
+      font-size: 0.75rem;
+      text-align: center;
+   }
+}
+
+.lightmode {
+   .task-footer {
+      &__filters {
+         background-color: theme-get('task-bg', 'light');
+         color: theme-get('completed-task', 'light');
+      }
+      &__info {
+         color: theme-get('completed-task', 'light');
+      }
+      &__filter-btn {
+         &:not(.active):hover {
+            color: theme-get('page-bg');
+         }
+      }
+   }
+}
