@@ -1,6 +1,6 @@
 # ✅ TodoApp
 
-Prosta i estetyczna aplikacja typu ToDo, która pozwala zarządzać codziennymi zadaniami. Stworzona z myślą o nauce pracy z JavaScriptem, lokalnym przechowywaniem danych oraz manipulacją DOM.
+Zaawansowana aplikacja typu ToDo do zarządzania zadaniami, umożliwiająca dodawanie, filtrowanie, przeciąganie i organizowanie zadań. Projekt stworzony w czystym JavaScript, HTML i SCSS – z myślą o rozwijaniu umiejętności frontendowych i pracy z danymi lokalnymi.
 
 
 ## 🔗 Demo
