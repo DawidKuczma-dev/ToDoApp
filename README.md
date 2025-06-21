@@ -78,7 +78,7 @@ Zaawansowana aplikacja typu ToDo do zarządzania zadaniami, umożliwiająca doda
 
 1. Sklonuj repozytorium  
 ```bash
-git clone https://github.com/DawidKuczma-dev/ToDoApp
+git clone https://github.com/DawidKuczma-dev/ToDoApp.git
 ```
 2. Otwórz plik `index.html` w przeglądarce lub uruchom lokalny serwer (np. Live Server)
 
